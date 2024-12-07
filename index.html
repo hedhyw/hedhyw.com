@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Terminal • hedhyw.com</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: monospace;
+            font-size: 16px;
+
+            background: #8a2387;
+            background: linear-gradient(120deg, #8a2387, #e94057, #f27121);
+            background-size: 125% 125%;
+            min-height: 600px;
+        }
+
+        .terminal {
+            border-radius: 8px;
+            width: 800px;
+            height: 500px;
+            background-color: #171421;
+            color: white;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+            margin: 30px;
+        }
+
+        .terminal .title {
+            border-radius: 8px 8px 0 0;
+            height: 40px;
+            background-color: #222222;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            user-select: none;
+        }
+
+        .terminal .command {
+            margin: 10px 0;
+        }
+
+        .terminal .command .prompt {
+            color: #26a269;
+            font-weight: bold;
+        }
+
+        .terminal .command .path {
+            color: #1d57b6;
+        }
+
+        .output {
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .cursor {
+            background-color: white;
+            height: 13px;
+            width: 9px;
+            padding: 0;
+            display: inline-block;
+            animation: blink-animation 1s step-start 0s infinite;
+        }
+
+        @keyframes blink-animation {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="terminal">
+        <div class="title">hedhyw@pc</div>
+        <div>
+            <div class="command">
+                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="input">whoami</span>
+            </div>
+            <div class="output">
+                Maksym Kryvchun
+            </div>
+        </div>
+        <div>
+            <div class="command">
+                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="input">echo &quot;$(&lt;github.txt )&quot;</span>
+            </div>
+            <div class="output">
+                <a href="https://github.com/hedhyw">https://github.com/hedhyw</a>
+            </div>
+        </div>
+        <div>
+            <div class="command">
+                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="input">cat ./linkedin.txt</span>
+            </div>
+            <div class="output">
+                <a href="https://www.linkedin.com/in/hedhyw">https://www.linkedin.com/in/hedhyw</a>
+            </div>
+        </div>
+        <div>
+            <div class="command">
+                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="input">ls ~/games</span>
+            </div>
+            <div class="output">
+                <a href="https://rightangle.hedhyw.com">https://rightangle.hedhyw.com</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="command">
+                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="input">date '+%Y'</span>
+            </div>
+            <div class="output">
+                <script>
+                    document.writeln((new Date()).getFullYear());
+                </script>
+                <noscript>2024</noscript>
+            </div>
+        </div>
+
+        <div>
+            <div class="command">
+                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="cursor"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
