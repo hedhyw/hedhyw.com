@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link href="./reset.css" rel="stylesheet">
+    <script async src="./terminal.js"></script>
     <style>
         body {
             display: flex;
@@ -30,9 +31,10 @@
         }
 
         .terminal {
+            word-break: break-all;
             border-radius: 8px;
             width: 800px;
-            height: 500px;
+            min-height: 500px;
             background-color: #171421;
             color: white;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
@@ -162,8 +164,9 @@
         <div>
             <div class="command">
                 <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
-                <span class="cursor"></span>
+                <span class="input" id="user-command-input"></span><span class="cursor"></span>
             </div>
+            <div class="output" id="user-command-output"></div>
         </div>
     </div>
 </body>
