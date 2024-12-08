@@ -67,7 +67,7 @@ function setUserCommandOutput(output) {
 }
 
 function appendCommandCharacter(key) {
-    if (key == " ") {
+    if (key === " ") {
         getUserCommandInputElement().innerHTML += "&nbsp;";
     } else {
         getUserCommandInputElement().innerText += key;
@@ -176,7 +176,7 @@ function handleDateCommand() {
 function handleGitCommand(commandTokens) {
     const arguments = commandTokens.slice(1).join(" ");
 
-    if (arguments == "remote get-url origin") {
+    if (arguments === "remote get-url origin") {
         setUserCommandOutput("https://github.com/hedhyw");
 
         return;
@@ -217,7 +217,7 @@ function handleCatCommand(commandTokens) {
 }
 
 function handleListCommand(commandTokens) {
-    if (commandTokens.length === 1 || commandTokens[1] == "~" || commandTokens[1] == ".") {
+    if (commandTokens.length === 1 || commandTokens[1] === "~" || commandTokens[1] === ".") {
         setUserCommandOutput("games linkedin.txt");
 
         return;
@@ -240,7 +240,7 @@ function sanitizePath(path) {
 }
 
 window.addEventListener("keypress", (event) => {
-    if (event.key == keyEnter) {
+    if (event.key === keyEnter) {
         submitCommand();
     } else {
         appendCommandCharacter(event.key);
@@ -250,7 +250,7 @@ window.addEventListener("keypress", (event) => {
 window.addEventListener("keydown", (event) => {
     const inputElement = getUserCommandInputElement();
 
-    if (event.key == keyBackspace) {
+    if (event.key === keyBackspace) {
         inputElement.innerText = inputElement.innerText.slice(0, -1);
     }
 });
