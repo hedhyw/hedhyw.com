@@ -29,7 +29,6 @@
 
             background: #8a2387;
             background: linear-gradient(120deg, #8a2387, #e94057, #f27121);
-            background-size: 125% 125%;
             min-height: 600px;
         }
 
@@ -106,6 +105,22 @@
         @-webkit-keyframes blink-animation {
             to {
                 visibility: hidden;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .command {
+                max-width: 80%;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .output {
+                max-width: 80%;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
         }
     </style>

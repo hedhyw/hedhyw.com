@@ -75,6 +75,7 @@ function appendCommandCharacter(key) {
 function submitCommand() {
     const inputElement = getUserCommandInputElement();
     const command = inputElement.innerText.trim();
+    const commandTokens = command.split(" ");
 
     inputElement.innerText = "";
     setUserCommandOutput("");
@@ -83,12 +84,12 @@ function submitCommand() {
         return;
     }
 
-    if (handleFakeShellCommand(command)) {
+    if (handleFakeShellCommand(commandTokens)) {
         return;
     }
 
     try {
-        const output = math.evaluate(command, scope);
+        const output = math.evaluate(commandTokens.join(" "), scope);
 
         setUserCommandOutput(output);
     } catch (exception) {
@@ -96,8 +97,7 @@ function submitCommand() {
     }
 }
 
-function handleFakeShellCommand(command) {
-    const commandTokens = command.split(" ");
+function handleFakeShellCommand(commandTokens) {
     const binary = commandTokens[0];
 
     switch (binary) {
