@@ -157,7 +157,7 @@ function handleEchoCommand(commandTokens) {
 }
 
 function handleHelpCommand() {
-    setUserCommandOutput("Try `ls` or input any math expression.");
+    setUserCommandOutput("Input any math expression or try `ls`, `echo`, `cat`, etc.");
 }
 
 function handleRevealYourSecrets() {
