@@ -54,6 +54,8 @@ const unsupportedCommands = [
     "sudo",
 ];
 
+const scope = {};
+
 function getUserCommandInputElement() {
     return document.getElementById(elementIdUserCommandInput);
 }
@@ -86,7 +88,7 @@ function submitCommand() {
     }
 
     try {
-        const output = eval(command);
+        const output = math.evaluate(command, scope);
 
         setUserCommandOutput(output);
     } catch (exception) {
@@ -146,7 +148,7 @@ function handleEchoCommand(commandTokens) {
 }
 
 function handleHelpCommand() {
-    setUserCommandOutput("Input any JavaScript command. Example: 1+1.");
+    setUserCommandOutput("Try `ls` or input any math expression.");
 }
 
 function handleWhoamiCommand() {
