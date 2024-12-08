@@ -47,6 +47,10 @@
             color: rgb(120, 120, 120);
         }
 
+        .terminal .command .delimeter {
+            color: white;
+        }
+
         .terminal .title {
             border-radius: 8px 8px 0 0;
             height: 40px;
@@ -110,14 +114,15 @@
 
         @media only screen and (max-width: 600px) {
             .command {
-                max-width: 80%;
+                max-width: 85%;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
+                color: rgb(120, 120, 120);
             }
 
             .output {
-                max-width: 80%;
+                max-width: 85%;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
@@ -131,7 +136,7 @@
         <div class="title">hedhyw@pc</div>
         <div>
             <div class="command">
-                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="prompt">hedhyw@pc</span><span class="delimeter">:</span><span class="path">~</span>
                 <span class="input">whoami</span>
             </div>
             <div class="output">
@@ -140,7 +145,7 @@
         </div>
         <div>
             <div class="command">
-                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="prompt">hedhyw@pc</span><span class="delimeter">:</span><span class="path">~</span>
                 <span class="input">git remote get-url origin</span>
             </div>
             <div class="output">
@@ -149,7 +154,7 @@
         </div>
         <div>
             <div class="command">
-                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="prompt">hedhyw@pc</span><span class="delimeter">:</span><span class="path">~</span>
                 <span class="input">cat ./linkedin.txt</span>
             </div>
             <div class="output">
@@ -158,7 +163,7 @@
         </div>
         <div>
             <div class="command">
-                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="prompt">hedhyw@pc</span><span class="delimeter">:</span><span class="path">~</span>
                 <span class="input">ls ~/games</span>
             </div>
             <div class="output">
@@ -168,7 +173,7 @@
 
         <div>
             <div class="command">
-                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="prompt">hedhyw@pc</span><span class="delimeter">:</span><span class="path">~</span>
                 <span class="input">date '+%Y'</span>
             </div>
             <div class="output">
@@ -181,7 +186,7 @@
 
         <div>
             <div class="command">
-                <span class="prompt">hedhyw@pc</span><span>:</span><span class="path">~</span>
+                <span class="prompt">hedhyw@pc</span><span class="delimeter">:</span><span class="path">~</span>
                 <span class="input" id="user-command-input"></span><span class="cursor"></span>
             </div>
             <div class="output" id="user-command-output"></div>
