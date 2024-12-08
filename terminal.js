@@ -19,6 +19,9 @@ const commandClear = "clear";
 const commandEcho = "echo";
 const commandPrintf = "printf";
 const unsupportedCommands = [
+    "bash",
+    "sh",
+    "zsh",
     "cd",
     "pwd",
     "mkdir",
