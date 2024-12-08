@@ -193,9 +193,22 @@ function handleCatCommand(commandTokens) {
     }
 
     const arguments = commandTokens.slice(1).join(" ");
+    const sanitizedPath = sanitizePath(arguments)
 
-    if (sanitizePath(arguments) === "linkedintxt") {
+    if (sanitizedPath === "games") {
+        setUserCommandOutput("cat: games: Is a directory");
+
+        return;
+    }
+
+    if (sanitizedPath === "linkedintxt") {
         setUserCommandOutput("https://www.linkedin.com/in/hedhyw");
+
+        return;
+    }
+
+    if (sanitizedPath === "gameshttpsrightanglehedhywcom") {
+        setUserCommandOutput("https://rightangle.hedhyw.com");
 
         return;
     }
@@ -223,7 +236,7 @@ function handleListCommand(commandTokens) {
 }
 
 function sanitizePath(path) {
-    return path.replaceAll(".", "").replaceAll("~", "").replaceAll("/", "").replaceAll("\\", "");
+    return path.replaceAll(".", "").replaceAll("~", "").replaceAll("/", "").replaceAll("\\", "").replaceAll(":", "");
 }
 
 window.addEventListener("keypress", (event) => {
