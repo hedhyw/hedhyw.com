@@ -4,6 +4,8 @@ const keyEnter = "Enter";
 const elementIdUserCommandInput = "user-command-input";
 const elementIdUserCommandOutput = "user-command-output";
 
+const revealYourSecrets = "reveal your secrets";
+
 const commandGit = "git";
 const commandList = "ls";
 const commandDate = "date";
@@ -74,13 +76,20 @@ function appendCommandCharacter(key) {
 
 function submitCommand() {
     const inputElement = getUserCommandInputElement();
-    const command = inputElement.innerText.trim();
+    let command = inputElement.innerText.trim().toLowerCase();
     const commandTokens = command.split(" ");
 
     inputElement.innerText = "";
     setUserCommandOutput("");
 
-    if (command == "") {
+    command = commandTokens.join(" ")
+    if (command === "") {
+        return;
+    }
+
+    if (command === revealYourSecrets) {
+        handleRevealYourSecrets();
+
         return;
     }
 
@@ -89,7 +98,7 @@ function submitCommand() {
     }
 
     try {
-        const output = math.evaluate(commandTokens.join(" "), scope);
+        const output = math.evaluate(command, scope);
 
         setUserCommandOutput(output);
     } catch (exception) {
@@ -149,6 +158,10 @@ function handleEchoCommand(commandTokens) {
 
 function handleHelpCommand() {
     setUserCommandOutput("Try `ls` or input any math expression.");
+}
+
+function handleRevealYourSecrets() {
+    setUserCommandOutput("Pray, attempt to summon `help` with thy enchanted wand.");
 }
 
 function handleWhoamiCommand() {
