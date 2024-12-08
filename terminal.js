@@ -6,6 +6,8 @@ const elementIdUserCommandOutput = "user-command-output";
 
 const revealYourSecrets = "reveal your secrets";
 
+const commandHello = "hello";
+const commandWall = "wall";
 const commandGit = "git";
 const commandList = "ls";
 const commandDate = "date";
@@ -128,6 +130,12 @@ function handleFakeShellCommand(commandTokens) {
         case commandGit:
             handleGitCommand(commandTokens);
             return true;
+        case commandHello:
+            handleHelloCommand();
+            return true;
+        case commandWall:
+            handleWallCommand(commandTokens);
+            return true;
         case commandExit:
             return true;
         case commandClear:
@@ -157,7 +165,7 @@ function handleEchoCommand(commandTokens) {
 }
 
 function handleHelpCommand() {
-    setUserCommandOutput("Input any math expression or try `ls`, `echo`, `cat`, etc.");
+    setUserCommandOutput("Input any math expression or try `ls`, `echo`, `cat`, `wall`, etc.");
 }
 
 function handleRevealYourSecrets() {
@@ -183,6 +191,16 @@ function handleGitCommand(commandTokens) {
     }
 
     setUserCommandOutput(`git: '${arguments}' is not a git command.`);
+}
+
+function handleHelloCommand() {
+    setUserCommandOutput("Xin chào thế giới!");
+}
+
+function handleWallCommand(commandTokens) {
+    const arguments = commandTokens.slice(1).join(" ");
+
+    setUserCommandOutput(`Broadcast message from hedhyw@pc (/dev/pts/1) at ${new Date()}: ${arguments}`);
 }
 
 function handleCatCommand(commandTokens) {
