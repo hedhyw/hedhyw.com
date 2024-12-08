@@ -56,6 +56,7 @@ const unsupportedCommands = [
     "alias",
     "history",
     "sudo",
+    "docker",
 ];
 
 const scope = {};
